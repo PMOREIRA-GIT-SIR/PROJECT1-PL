@@ -9,13 +9,13 @@ ul,li {
 }
 
 li {
-	font-size:50px;
+	font-size:25px;
 	width: 1.5em;
 	height: 1.5em;
 	text-align: center;
 	border-style: solid;
 	border-color: black;
-	border-radius : 15px;
+	border-radius : 10px;
 }
 
 ul.estrelas li{

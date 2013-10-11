@@ -14,7 +14,7 @@
 			<?php
 				for($i=0; $i<5; $i++) {
 					$num = rand(1,50);
-					echo "<li>".$num."</li>";
+					echo "<li>".$num."</li>\n";
 				}
 			?>	
 		</ul>
