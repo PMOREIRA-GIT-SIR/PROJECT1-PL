@@ -1,0 +1,27 @@
+body {
+	background-color: yellow;
+	color:blue;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+ul,li {
+	display:inline-block;
+}
+
+li {
+	font-size:50px;
+	width: 1.5em;
+	height: 1.5em;
+	text-align: center;
+	border-style: solid;
+	border-color: black;
+	border-radius : 15px;
+}
+
+ul.estrelas li{
+	background-color:pink;
+}
+
+ul.numeros li{
+	background-color:lime;
+}
