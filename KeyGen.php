@@ -16,7 +16,7 @@ class CKeyGen {
 	public function __construct() {
 		$this->genKey();
 	}
-	
+
 	public function genKey() {
 		$extN = new CExtractor(CKeyGen::NN, CKeyGen::MINN, CKeyGen::MAXN);
 		$this->numbers = $extN->extract();
@@ -40,7 +40,23 @@ class CKeyGen {
 		return $html;
 	}
 	
-
+	public function Key2XML() {
+		$xml = new SimpleXMLElement("<chave></chave>");
+		$node_numbers 	= $xml->addChild("numeros");
+			foreach ($this->numbers as  $number) {
+				$node_numbers->addChild("num",$number);
+			}
+		$node_stars		= $xml->addChild("estrelas");
+			foreach ($this->stars as  $star) {
+				$node_stars->addChild("num",$star);
+			}
+		return $xml->asXML();
+	}
+	
+	public function Key2JSON() {
+		return json_encode($this);
+	}
+	
 }
 class CExtractor {
 	private $min;
@@ -71,9 +87,4 @@ class CExtractor {
 		return $key;
 	}
 }
-
-//$test = new CKeyGen();
-//var_dump($test->numbers);
-//var_dump($test->stars);
-//echo $test->key2UL();
 ?>

@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title>Gerador de Chaves EuroMilhões</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="em_style.css"/>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script>
+		
+			$(document).ready( 
+				function () {
+					$("#b1").click(function () {
+						$.getJSON(
+							"http://alunos.estg.ipvc.pt/~pmoreira/EURO/EuroKeyWS.php",
+							function (chave) {
+								//alert(chave.data.numbers);
+								odiv = $("<div/>");
+								ouln = $("<ul/>");
+								ouln.addClass("numeros");
+								for (i=0; i < chave.data.numbers.length; i++) {
+										oli = $("<li/>")
+										ouln.append(oli);
+										oli.html(chave.data.numbers[i]);
+									}
+								ouls = $("<ul/>");
+								ouls.addClass("estrelas");
+								for (i=0; i < chave.data.stars.length; i++) {
+										oli = $("<li/>")
+										ouls.append(oli);
+										oli.html(chave.data.stars[i]);
+									}
+								odiv.append(ouln);
+								odiv.append(ouls);
+								$("body").append(odiv);
+							});
+						});
+					});
+			
+
+			
+		</script>
+	</head>
+	<body>
+		<h1>Euromilhões</h1>
+		<!-- Lista de números -->
+		<input id="b1" type="button" value="gerachave"/>
+		<ul class="numeros">
+			<li>1</li>
+			<li>10</li>
+			<li>23</li>
+			<li>25</li>
+			<li>44</li>
+		</ul>
+		<!-- lista de estrelas -->
+		<ul class="estrelas">
+			<li>9</li>
+			<li>11</li>
+		</ul>
+		<a href="JSClient.html">aaa</a>
+	</body>
+</html>
