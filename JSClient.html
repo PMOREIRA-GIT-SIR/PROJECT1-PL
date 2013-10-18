@@ -23,11 +23,22 @@
 									}
 								ouls = $("<ul/>");
 								ouls.addClass("estrelas");
+					
+								// ciclo javascript mais convencional			
 								for (i=0; i < chave.data.stars.length; i++) {
-										oli = $("<li/>")
+										oli = $("<li/>");
 										ouls.append(oli);
 										oli.html(chave.data.stars[i]);
 									}
+								/*
+								// ou fazendo uso de iterador de jQuery
+								$.each(chave.data.stars, function () {
+										oli = $("<li/>");
+										ouls.append(oli);
+										oli.html(this);
+								});
+								*/
+								
 								odiv.append(ouln);
 								odiv.append(ouls);
 								$("body").append(odiv);
